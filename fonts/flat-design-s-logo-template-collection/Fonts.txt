@@ -1,0 +1,17 @@
+Fonts used in this design:
+
+Font: Bebas
+Author: Flat-it
+Url: http://www.fontsquirrel.com/fonts/bebas
+
+Font: Caviar Dreams
+Author: Nymphont
+Url: http://www.fontsquirrel.com/fonts/caviar-dreams
+
+Font: Lato
+Author: tyPoland Lukasz Dziedzic
+Url: http://www.fontsquirrel.com/fonts/lato
+
+Font: League Spartan
+Author: The League of Moveable Type
+Url: http://www.fontsquirrel.com/fonts/league-spartan
