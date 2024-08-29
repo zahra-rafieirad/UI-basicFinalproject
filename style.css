@@ -1,27 +1,47 @@
 * {
-
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
 }
+/* STYLING LOGO AND NAVIGATIONBAR */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: rgb(25, 25, 48);
+  position: fixed;
+  z-index: 99;
+  top: 0;
+}
+.logo {
+  width: 10vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo img {
+  width: 45px;
+  height: 45px;
+}
+.logo img:hover{
+  transform: rotate(360deg);
+  transition-duration: 1s;
+  transition-delay: 0.6s;
+}
 /* Navigation bar */
 .navbar {
   display: flex;
   justify-content: right;
   align-items: center;
-  width: 100vw;
-/*   height: 10%;
- */ 
- height: 80px;
+  width: 90vw;
+  height: 80px;
   background-color: rgb(25, 25, 48);
   line-height: normal;
-  position: fixed;
-  z-index: 99;
-  top: 0%;
 }
 a {
   text-decoration: none;
@@ -29,21 +49,17 @@ a {
   text-align: center;
   color: white;
 }
+.hamburger,
+.hamburger.collapsed {
+  display: none;
+}
+/* APPLYING HOVER EFFECT FOR NAVBAR */
 .navbar a:hover {
   color: rgb(112, 189, 219);
+  font-size: larger;
+  font-weight: bolder;
 }
 
-/* a img{
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50px;
-  padding-right: 800px;
-
-
-} */
-/* .logo img{
-  border-radius: 50px;
-} */
 /* applying font size and..to home section (Header)*/
 @font-face {
   font-family: Montserrat;
@@ -107,8 +123,6 @@ h2 {
 .box-one,
 .box-two {
   width: 40%;
-  /*   height: 100%;
- */
   box-shadow: 5px 5px 10px rgb(66, 65, 65);
   border-radius: 10px;
   background-color: rgb(25, 25, 48);
@@ -189,29 +203,9 @@ img {
 span {
   font-weight: bold;
 }
-/* gallery section and styling images */
-/* #Gallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 70vw;
-  margin-inline: auto;
-  box-shadow: 10px 10px 15px rgb(34, 33, 33);
-  border-radius: 10px;
-}
- */
-/* .reviewImages img {
-  width: 32.7%;
-  aspect-ratio: 1;
-  border-radius: 10px;
-}
- */
-
+/* GALLERY SECTION */
 #Gallery {
   display: flex;
-  /*   background-color: white;
- */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -226,15 +220,13 @@ span {
 
 .flip-card {
   background-color: transparent;
-  /*   width: 30vw;
-  height: 30vh; */
   width: 32%;
   aspect-ratio: 1;
+  cursor: grab;
 }
 
 .flip-card-inner {
   position: relative;
-
   width: 100%;
   height: 100%;
   text-align: center;
@@ -294,6 +286,14 @@ textarea {
 input {
   height: 2rem;
 }
+input,
+textarea:focus {
+  outline: none;
+}
+input:hover,textarea:hover{
+  transform: translateY(-4px);
+
+}
 button {
   width: 20rem;
   height: 2rem;
@@ -302,6 +302,13 @@ button {
   font-size: larger;
   border-style: hidden;
   border-radius: 5px;
+}
+button:hover {
+  background-color: rgb(45, 80, 95);
+  transform: translateY(-4px);
+/*   cursor: pointer;
+ */
+ cursor: pointer;
 }
 label {
   font-size: 1.5rem;
@@ -322,12 +329,15 @@ footer p,
 h4 {
   padding: 0.5rem;
 }
-
-/* addjusting mediaquary for mobile,tablet and screens */
-.hamburger,
-.hamburger.collapsed {
-  display: none;
+footer h4 i:hover{
+  transform: translateX(-10px);
+  transition-duration: 0.5s;
+  transition-delay: 0.3s;
+  cursor: grabbing;
+  
 }
+
+/* addjusting mediaquary */
 
 @media (max-width: 1106px) {
   a {
@@ -344,9 +354,7 @@ h4 {
     height: 250px;
     margin-top: 0%;
   }
-  /* a{
-    padding: 0.5rem;
-  } */
+
   .boxes {
     display: flex;
     flex-direction: column;
@@ -367,6 +375,13 @@ h4 {
     -webkit-line-clamp: 15;
     overflow: hidden;
   }
+  #Gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
   .text p {
     display: -webkit-box;
@@ -375,16 +390,8 @@ h4 {
     overflow: hidden;
   }
 
-  /*  #Gallery{
-    height: 30vw;
-    width: 100%;
-    object-fit: cover;
-  }  */
-  /*   .flip-card-back{
-    font-size: 0.5rem;
-   } */
   .flip-card-back {
-    font-size: x-small;
+    font-size: smaller;
   }
 }
 @media (width<442px) {
